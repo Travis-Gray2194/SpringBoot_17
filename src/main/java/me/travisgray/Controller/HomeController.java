@@ -61,8 +61,11 @@ public class HomeController {
         }
         return "index";
     }
+//Use in memory authentication and to reigister admins users to database so Only admins can reigster admin user
 
-
+//    Principal object where you have authorites username,password and authorites for a particular user you must declare
+//    principal p and use p.getName and p.getauthorites of that particualar Principal and get authorites and get list of things that you need
+//    Principal helps determine what authorites a user has and what role they are. Note for View: Use th:sec authorize to see this same information in view.
     @RequestMapping("/secure")
     public String secure(HttpServletRequest request, Authentication authentication, Principal principal) {
         Boolean isAdmin = request.isUserInRole("ADMIN");

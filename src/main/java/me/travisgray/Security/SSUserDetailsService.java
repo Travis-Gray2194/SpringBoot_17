@@ -29,6 +29,7 @@ public class SSUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         try {
+//            Must be from class user
             User user = userRepository.findByUsername(username);
             if (user == null) {
                 System.out.println("User not found with the provided username: " + user.toString());
@@ -37,6 +38,8 @@ public class SSUserDetailsService implements UserDetailsService {
 
             System.out.println(" user from username " + user.toString());
             return new org.springframework.security.core.userdetails.User(
+//                    Return this withUser("user").password("password").authorities("USER").
+//                    Dataloader for Spring Security see line in user1.setRoles(Arrays.asList(userRole)); in DataLoader Class
                     user.getUsername(), user.getPassword(), getAuthorities(user));
         }
         catch (Exception e) {

@@ -19,19 +19,6 @@
 Logged user: <span sec:authentication="name">
     The value of the "name" property of authentication object should apper here. </span><br />
 
-<!--Roles: <span sec:authentication="principal.hasauthorities">[USER, ADMIN]</span><br /><br />-->
-
-
-<!--<div class="row" sec:authorize="hasAuthority('ADMIN')">-->
-    <!--<div class="col-md-10 col-md-offset-2">-->
-        <!--<h2>User Has Role Admin</h2>-->
-    <!--</div>-->
-<!--</div>-->
-
-<!--<div class="row" sec:authorize="hasAuthority('USER')">-->
-    <!--<div class="col-md-10 col-md-offset-2">-->
-        <!--<h2>User Has Authority Admin</h2>-->
-    <!--</div>-->
 
 <div sec:authorize="isAnonymous()">
     This content is only shown to anonymous users.</div>

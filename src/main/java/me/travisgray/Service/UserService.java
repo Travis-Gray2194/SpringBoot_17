@@ -34,7 +34,7 @@ public class UserService {
         return userRepository.findByUsername(username);
     }
 
-//    Create method to save as Admin or User with The new user model
+//    Create method to save as Admin or User with The new user model can also save new user role within Data Loader
 
     public void saveUser(User user) {
         user.setRoles(Arrays.asList(roleRepository.findByRole("USER")));
@@ -47,5 +47,8 @@ public class UserService {
         user.setEnabled(true);
         userRepository.save(user);
     }
+
+
+
 
 }
